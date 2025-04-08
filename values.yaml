@@ -22,15 +22,15 @@ service:
   port: 5600
   protocol: TCP
   targetPort: 5600
-  nodePort: 31234
+  nodePort: 30001
 
 
 # This is to setup the liveness and readiness probes more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
 livenessProbe:
   httpGet:
     path: /
-    port: http
+    port: 5600
 readinessProbe:
   httpGet:
     path: /
-    port: http
+    port: 5600
